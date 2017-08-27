@@ -1,0 +1,15 @@
+{
+  "name": "sandbox6",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "~4.13.1",
+    "ejs": "~2.4.1"
+  },
+  "main": "sandbox6_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
