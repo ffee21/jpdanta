@@ -71,7 +71,7 @@ module.exports = mongoose.model('ticker', tickerSchema);
 
 
 function requestfn(error, response, body) {
-    log("got into response");
+    // log("got into response");
     if (error) {
         throw error;
     }
