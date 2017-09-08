@@ -20,7 +20,9 @@ function log(msg) {
 
 function transform_ticker(whenFetched, tickerjson) {
     var t_ticker = [];
-    var colnames = ["", "last", "lowestAsk", "highestBid", "percentChange", "baseVolume", "quoteVolume", "high24hr", "low24hr"]
+//    var colnames = ["", "last", "lowestAsk", "highestBid", "percentChange", "baseVolume", "quoteVolume", "high24hr", "low24hr"]
+    var colnames = ["", "last", "lowestAsk", "highestBid"]
+
     // var coinids = [];
     // var measureids = [];
 
