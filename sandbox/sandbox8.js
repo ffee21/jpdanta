@@ -1,8 +1,17 @@
 var CronJob = require('cron').CronJob;
 var request = require("request");
 var mongoose = require("mongoose");
+mongoose.Promise = require('bluebird');
 
 var url = "https://poloniex.com/public?command=returnTicker";
+
+var mongodbUri = "mongodb://localhost/jpdanta";
+var mongodbOptions = {
+  useMongoClient: true,
+  socketTimeoutMS: 0,
+  keepAlive: true,
+  reconnectTries: 30
+};
 
 function log(msg) {
     var date = new Date();
@@ -79,12 +88,12 @@ function requestfn(error, response, body) {
     var ticker2 = transform_ticker(date, JSON.parse(body));
 
     var db = mongoose.connection;
-    db.on('error', console.error);
-    db.once('open', function () {
-        //console.log("Connected to mongodb");
-    });
+    // db.on('error', console.error);
+    // db.once('open', function () {
+    //     //console.log("Connected to mongodb");
+    // });
 
-    mongoose.connect('mongodb://localhost/jpdanta');
+    mongoose.connect(mongodbUri, mongodbOptions);
     // log("mongoose connected");
     var Ticker = mongoose.model('ticker', tickerSchema);
 
