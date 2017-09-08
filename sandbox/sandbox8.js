@@ -1,37 +1,83 @@
+var CronJob = require('cron').CronJob;
 var request = require("request");
+var mongoose = require("mongoose");
+
 var url = "https://poloniex.com/public?command=returnTicker";
 
+function log(msg) {
+    var date = new Date();
+    console.log(date.toLocaleString() + " " + msg);
+}
 
 function transform_ticker(whenFetched, tickerjson) {
     var t_ticker = [];
     var colnames = ["", "last", "lowestAsk", "highestBid", "percentChange", "baseVolume", "quoteVolume", "high24hr", "low24hr"]
+    // var coinids = [];
+    // var measureids = [];
+
+    // colnames.forEach(function(value, x) {
+    //     if (value != "") {
+    //         measureids.push({"id": x, "name": value});
+    //     }
+    // });
+
     for (var i in tickerjson) {
         // per coin
-
+        // coinids.push({"id": tickerjson[i]["id"], "name": i});
         colnames.forEach(function (value, x) {
             if (value != "") {
                 t_ticker.push({
-                    1: tickerjson[i]["id"], // coin id
-                    2: x, // measure
-                    3: tickerjson[i][value], // value
-                    4: whenFetched // whenFetched
+                    a: tickerjson[i]["id"], // coin id
+                    b: x, // measure
+                    c: tickerjson[i][value], // value
+                    d: whenFetched // whenFetched
                 });
+                
             }
         });
     }
 
+    // {
+    //     var fs = require('fs');
+    //     console.log(measureids);
+    //     console.log(coinids);
+    //     fs.writeFileSync("measureids.txt", JSON.stringify(measureids));
+    //     fs.writeFileSync("coinids.txt", JSON.stringify(coinids));
+    // }
     return t_ticker;
 }
 
-request(url, function (error, response, body) {
+var Schema = mongoose.Schema;
+var tickerSchema = new Schema({
+    a: {
+        type: Number,
+        required: true
+    },
+    b: {
+        type: Number,
+        required: true
+    },
+    c: {
+        type: Number,
+        required: true
+    },
+    d: {
+        type: Date,
+        required: true
+    },
+});
+
+module.exports = mongoose.model('ticker', tickerSchema);
+
+
+function requestfn(error, response, body) {
+    log("got into response");
     if (error) {
         throw error;
     }
     var date = new Date();
-    console.log("well fetched: " + body.length + " bytes");
     var ticker2 = transform_ticker(date, JSON.parse(body));
 
-    var mongoose = require("mongoose");
     var db = mongoose.connection;
     db.on('error', console.error);
     db.once('open', function () {
@@ -39,29 +85,7 @@ request(url, function (error, response, body) {
     });
 
     mongoose.connect('mongodb://localhost/jpdanta');
-
-    var Schema = mongoose.Schema;
-    var tickerSchema = new Schema({
-        1: {
-            type: Number,
-            required: true
-        },
-        2: {
-            type: Number,
-            required: true
-        },
-        3: {
-            type: Number,
-            required: true
-        },
-        4: {
-            type: Date,
-            required: true
-        },
-    });
-
-    module.exports = mongoose.model('ticker', tickerSchema);
-
+    log("mongoose connected");
     var Ticker = mongoose.model('ticker', tickerSchema);
 
     ticker2.forEach(function (aTicker, x) {
@@ -70,6 +94,15 @@ request(url, function (error, response, body) {
             if (err) throw err;
         });
     });
-
+    
     mongoose.disconnect();
-});
+    log("mongoose disconnected");
+}
+
+
+
+new CronJob('*/3 * * * * *', function () {
+    log("start");
+    request(url, requestfn);
+    log("finish");
+}, null, true);

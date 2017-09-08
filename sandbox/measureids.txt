@@ -1,0 +1,1 @@
+[{"id":1,"name":"last"},{"id":2,"name":"lowestAsk"},{"id":3,"name":"highestBid"},{"id":4,"name":"percentChange"},{"id":5,"name":"baseVolume"},{"id":6,"name":"quoteVolume"},{"id":7,"name":"high24hr"},{"id":8,"name":"low24hr"}]
