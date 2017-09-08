@@ -18,8 +18,6 @@ function transform_ticker(whenFetched, tickerjson) {
                 });
             }
         });
-
-        console.log(t_ticker);
     }
 
     return t_ticker;
@@ -31,14 +29,47 @@ request(url, function (error, response, body) {
     }
     var date = new Date();
     console.log("well fetched: " + body.length + " bytes");
-    var ticker2 = transform_ticker(date.toLocaleDateString(), JSON.parse(body));
+    var ticker2 = transform_ticker(date, JSON.parse(body));
+
+    var mongoose = require("mongoose");
+    var db = mongoose.connection;
+    db.on('error', console.error);
+    db.once('open', function () {
+        //console.log("Connected to mongodb");
+    });
+
+    mongoose.connect('mongodb://localhost/jpdanta');
+
+    var Schema = mongoose.Schema;
+    var tickerSchema = new Schema({
+        1: {
+            type: Number,
+            required: true
+        },
+        2: {
+            type: Number,
+            required: true
+        },
+        3: {
+            type: Number,
+            required: true
+        },
+        4: {
+            type: Date,
+            required: true
+        },
+    });
+
+    module.exports = mongoose.model('ticker', tickerSchema);
+
+    var Ticker = mongoose.model('ticker', tickerSchema);
+
+    ticker2.forEach(function (aTicker, x) {
+        var aTickerObj = new Ticker(aTicker);
+        aTickerObj.save(function (err, doc) {
+            if (err) throw err;
+        });
+    });
+
+    mongoose.disconnect();
 });
-
-// var mgs = require("mongoose");
-// var db = mgs.connection;
-// db.on('error', console.error);
-// db.once('open', function() {
-//     console.log("Connected to mongodb");
-// });
-
-// mgs.connect('mongodb://localhost/mongodb_tutorial');
