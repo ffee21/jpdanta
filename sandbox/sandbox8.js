@@ -85,7 +85,7 @@ function requestfn(error, response, body) {
     });
 
     mongoose.connect('mongodb://localhost/jpdanta');
-    log("mongoose connected");
+    // log("mongoose connected");
     var Ticker = mongoose.model('ticker', tickerSchema);
 
     ticker2.forEach(function (aTicker, x) {
@@ -96,13 +96,13 @@ function requestfn(error, response, body) {
     });
     
     mongoose.disconnect();
-    log("mongoose disconnected");
+    // log("mongoose disconnected");
 }
 
 
 
 new CronJob('*/3 * * * * *', function () {
-    log("start");
+    // log("start");
     request(url, requestfn);
-    log("finish");
+    // log("finish");
 }, null, true);
