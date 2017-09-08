@@ -1,0 +1,14 @@
+1   coin id
+2   info name
+3   info
+4   whenFetched
+
+
+1   last
+2   lowestAsk
+3   highestBid
+4   percentChange
+5   baseVolume
+6   quoteVolume
+7   high24hr
+8   low24hr
