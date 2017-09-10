@@ -112,7 +112,7 @@ function requestfn(error, response, body) {
 
 
 
-new CronJob('*/3 * * * * *', function () {
+new CronJob('*/10 * * * * *', function () {
     // log("start");
     request(url, requestfn);
     // log("finish");
