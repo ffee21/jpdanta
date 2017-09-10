@@ -84,7 +84,7 @@ module.exports = mongoose.model('ticker', tickerSchema);
 function requestfn(error, response, body) {
     // log("got into response");
     if (error) {
-        console.error(error);
+        console.log(error);
     }
     var date = new Date();
     var ticker2 = transform_ticker(date, JSON.parse(body));
