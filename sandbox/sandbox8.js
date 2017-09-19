@@ -84,18 +84,11 @@ module.exports = mongoose.model('ticker', tickerSchema);
 function requestfn(error, response, body) {
     // log("got into response");
     if (error) {
-        console.log(error);
-        return;
+        throw error;
     }
     var date = new Date();
-    var ticker2;
-    try {
-        ticker2 = transform_ticker(date, JSON.parse(body));        
-    } catch (error) {
-        console.log(error);
-        return;
-    }
-
+    var ticker2 = transform_ticker(date, JSON.parse(body));        
+    
     var db = mongoose.connection;
     // db.on('error', console.error);
     // db.once('open', function () {
@@ -121,6 +114,10 @@ function requestfn(error, response, body) {
 
 new CronJob('*/10 * * * * *', function () {
     // log("start");
-    request(url, requestfn);
+    try {
+        request(url, requestfn);        
+    } catch (error) {
+        console.log(error);
+    }
     // log("finish");
 }, null, true);
