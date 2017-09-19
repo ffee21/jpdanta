@@ -5,12 +5,10 @@ library(mongolite)
 ## MongoDB connection
 con <- mongolite::mongo(collection = "tickers",
                         db = "jpdanta",
-                        url = "mongodb://localhost",
+                        url = "mongodb://192.168.0.15",
                         verbose = TRUE,
                         options = ssl_options())
 
-con$count()
-df <- con$find(query = '{"a": 7, "b": 1}')
+df <- con$find(query = '{"a": 121, "b": 1}')
+plot(df$d, df$c, type="l")
 head(df)
-plot(df$d, df$c)
-df$d
