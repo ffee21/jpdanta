@@ -1,1 +1,286 @@
-[{"id":7,"name":"BTC_BCN"},{"id":8,"name":"BTC_BELA"},{"id":10,"name":"BTC_BLK"},{"id":12,"name":"BTC_BTCD"},{"id":13,"name":"BTC_BTM"},{"id":14,"name":"BTC_BTS"},{"id":15,"name":"BTC_BURST"},{"id":20,"name":"BTC_CLAM"},{"id":24,"name":"BTC_DASH"},{"id":25,"name":"BTC_DGB"},{"id":27,"name":"BTC_DOGE"},{"id":28,"name":"BTC_EMC2"},{"id":31,"name":"BTC_FLDC"},{"id":32,"name":"BTC_FLO"},{"id":38,"name":"BTC_GAME"},{"id":40,"name":"BTC_GRC"},{"id":43,"name":"BTC_HUC"},{"id":50,"name":"BTC_LTC"},{"id":51,"name":"BTC_MAID"},{"id":58,"name":"BTC_OMNI"},{"id":60,"name":"BTC_NAUT"},{"id":61,"name":"BTC_NAV"},{"id":63,"name":"BTC_NEOS"},{"id":64,"name":"BTC_NMC"},{"id":66,"name":"BTC_NOTE"},{"id":69,"name":"BTC_NXT"},{"id":73,"name":"BTC_PINK"},{"id":74,"name":"BTC_POT"},{"id":75,"name":"BTC_PPC"},{"id":83,"name":"BTC_RIC"},{"id":86,"name":"BTC_SJCX"},{"id":89,"name":"BTC_STR"},{"id":92,"name":"BTC_SYS"},{"id":97,"name":"BTC_VIA"},{"id":98,"name":"BTC_XVC"},{"id":99,"name":"BTC_VRC"},{"id":100,"name":"BTC_VTC"},{"id":104,"name":"BTC_XBC"},{"id":108,"name":"BTC_XCP"},{"id":112,"name":"BTC_XEM"},{"id":114,"name":"BTC_XMR"},{"id":116,"name":"BTC_XPM"},{"id":117,"name":"BTC_XRP"},{"id":121,"name":"USDT_BTC"},{"id":122,"name":"USDT_DASH"},{"id":123,"name":"USDT_LTC"},{"id":124,"name":"USDT_NXT"},{"id":125,"name":"USDT_STR"},{"id":126,"name":"USDT_XMR"},{"id":127,"name":"USDT_XRP"},{"id":129,"name":"XMR_BCN"},{"id":130,"name":"XMR_BLK"},{"id":131,"name":"XMR_BTCD"},{"id":132,"name":"XMR_DASH"},{"id":137,"name":"XMR_LTC"},{"id":138,"name":"XMR_MAID"},{"id":140,"name":"XMR_NXT"},{"id":148,"name":"BTC_ETH"},{"id":149,"name":"USDT_ETH"},{"id":150,"name":"BTC_SC"},{"id":151,"name":"BTC_BCY"},{"id":153,"name":"BTC_EXP"},{"id":155,"name":"BTC_FCT"},{"id":158,"name":"BTC_RADS"},{"id":160,"name":"BTC_AMP"},{"id":162,"name":"BTC_DCR"},{"id":163,"name":"BTC_LSK"},{"id":166,"name":"ETH_LSK"},{"id":167,"name":"BTC_LBC"},{"id":168,"name":"BTC_STEEM"},{"id":169,"name":"ETH_STEEM"},{"id":170,"name":"BTC_SBD"},{"id":171,"name":"BTC_ETC"},{"id":172,"name":"ETH_ETC"},{"id":173,"name":"USDT_ETC"},{"id":174,"name":"BTC_REP"},{"id":175,"name":"USDT_REP"},{"id":176,"name":"ETH_REP"},{"id":177,"name":"BTC_ARDR"},{"id":178,"name":"BTC_ZEC"},{"id":179,"name":"ETH_ZEC"},{"id":180,"name":"USDT_ZEC"},{"id":181,"name":"XMR_ZEC"},{"id":182,"name":"BTC_STRAT"},{"id":183,"name":"BTC_NXC"},{"id":184,"name":"BTC_PASC"},{"id":185,"name":"BTC_GNT"},{"id":186,"name":"ETH_GNT"},{"id":187,"name":"BTC_GNO"},{"id":188,"name":"ETH_GNO"},{"id":189,"name":"BTC_BCH"},{"id":190,"name":"ETH_BCH"},{"id":191,"name":"USDT_BCH"},{"id":192,"name":"BTC_ZRX"},{"id":193,"name":"ETH_ZRX"}]
+[{
+    "id": 7,
+    "name": "BTC_BCN"
+}, {
+    "id": 8,
+    "name": "BTC_BELA"
+}, {
+    "id": 10,
+    "name": "BTC_BLK"
+}, {
+    "id": 12,
+    "name": "BTC_BTCD"
+}, {
+    "id": 13,
+    "name": "BTC_BTM"
+}, {
+    "id": 14,
+    "name": "BTC_BTS"
+}, {
+    "id": 15,
+    "name": "BTC_BURST"
+}, {
+    "id": 20,
+    "name": "BTC_CLAM"
+}, {
+    "id": 24,
+    "name": "BTC_DASH"
+}, {
+    "id": 25,
+    "name": "BTC_DGB"
+}, {
+    "id": 27,
+    "name": "BTC_DOGE"
+}, {
+    "id": 28,
+    "name": "BTC_EMC2"
+}, {
+    "id": 31,
+    "name": "BTC_FLDC"
+}, {
+    "id": 32,
+    "name": "BTC_FLO"
+}, {
+    "id": 38,
+    "name": "BTC_GAME"
+}, {
+    "id": 40,
+    "name": "BTC_GRC"
+}, {
+    "id": 43,
+    "name": "BTC_HUC"
+}, {
+    "id": 50,
+    "name": "BTC_LTC"
+}, {
+    "id": 51,
+    "name": "BTC_MAID"
+}, {
+    "id": 58,
+    "name": "BTC_OMNI"
+}, {
+    "id": 60,
+    "name": "BTC_NAUT"
+}, {
+    "id": 61,
+    "name": "BTC_NAV"
+}, {
+    "id": 63,
+    "name": "BTC_NEOS"
+}, {
+    "id": 64,
+    "name": "BTC_NMC"
+}, {
+    "id": 66,
+    "name": "BTC_NOTE"
+}, {
+    "id": 69,
+    "name": "BTC_NXT"
+}, {
+    "id": 73,
+    "name": "BTC_PINK"
+}, {
+    "id": 74,
+    "name": "BTC_POT"
+}, {
+    "id": 75,
+    "name": "BTC_PPC"
+}, {
+    "id": 83,
+    "name": "BTC_RIC"
+}, {
+    "id": 86,
+    "name": "BTC_SJCX"
+}, {
+    "id": 89,
+    "name": "BTC_STR"
+}, {
+    "id": 92,
+    "name": "BTC_SYS"
+}, {
+    "id": 97,
+    "name": "BTC_VIA"
+}, {
+    "id": 98,
+    "name": "BTC_XVC"
+}, {
+    "id": 99,
+    "name": "BTC_VRC"
+}, {
+    "id": 100,
+    "name": "BTC_VTC"
+}, {
+    "id": 104,
+    "name": "BTC_XBC"
+}, {
+    "id": 108,
+    "name": "BTC_XCP"
+}, {
+    "id": 112,
+    "name": "BTC_XEM"
+}, {
+    "id": 114,
+    "name": "BTC_XMR"
+}, {
+    "id": 116,
+    "name": "BTC_XPM"
+}, {
+    "id": 117,
+    "name": "BTC_XRP"
+}, {
+    "id": 121,
+    "name": "USDT_BTC"
+}, {
+    "id": 122,
+    "name": "USDT_DASH"
+}, {
+    "id": 123,
+    "name": "USDT_LTC"
+}, {
+    "id": 124,
+    "name": "USDT_NXT"
+}, {
+    "id": 125,
+    "name": "USDT_STR"
+}, {
+    "id": 126,
+    "name": "USDT_XMR"
+}, {
+    "id": 127,
+    "name": "USDT_XRP"
+}, {
+    "id": 129,
+    "name": "XMR_BCN"
+}, {
+    "id": 130,
+    "name": "XMR_BLK"
+}, {
+    "id": 131,
+    "name": "XMR_BTCD"
+}, {
+    "id": 132,
+    "name": "XMR_DASH"
+}, {
+    "id": 137,
+    "name": "XMR_LTC"
+}, {
+    "id": 138,
+    "name": "XMR_MAID"
+}, {
+    "id": 140,
+    "name": "XMR_NXT"
+}, {
+    "id": 148,
+    "name": "BTC_ETH"
+}, {
+    "id": 149,
+    "name": "USDT_ETH"
+}, {
+    "id": 150,
+    "name": "BTC_SC"
+}, {
+    "id": 151,
+    "name": "BTC_BCY"
+}, {
+    "id": 153,
+    "name": "BTC_EXP"
+}, {
+    "id": 155,
+    "name": "BTC_FCT"
+}, {
+    "id": 158,
+    "name": "BTC_RADS"
+}, {
+    "id": 160,
+    "name": "BTC_AMP"
+}, {
+    "id": 162,
+    "name": "BTC_DCR"
+}, {
+    "id": 163,
+    "name": "BTC_LSK"
+}, {
+    "id": 166,
+    "name": "ETH_LSK"
+}, {
+    "id": 167,
+    "name": "BTC_LBC"
+}, {
+    "id": 168,
+    "name": "BTC_STEEM"
+}, {
+    "id": 169,
+    "name": "ETH_STEEM"
+}, {
+    "id": 170,
+    "name": "BTC_SBD"
+}, {
+    "id": 171,
+    "name": "BTC_ETC"
+}, {
+    "id": 172,
+    "name": "ETH_ETC"
+}, {
+    "id": 173,
+    "name": "USDT_ETC"
+}, {
+    "id": 174,
+    "name": "BTC_REP"
+}, {
+    "id": 175,
+    "name": "USDT_REP"
+}, {
+    "id": 176,
+    "name": "ETH_REP"
+}, {
+    "id": 177,
+    "name": "BTC_ARDR"
+}, {
+    "id": 178,
+    "name": "BTC_ZEC"
+}, {
+    "id": 179,
+    "name": "ETH_ZEC"
+}, {
+    "id": 180,
+    "name": "USDT_ZEC"
+}, {
+    "id": 181,
+    "name": "XMR_ZEC"
+}, {
+    "id": 182,
+    "name": "BTC_STRAT"
+}, {
+    "id": 183,
+    "name": "BTC_NXC"
+}, {
+    "id": 184,
+    "name": "BTC_PASC"
+}, {
+    "id": 185,
+    "name": "BTC_GNT"
+}, {
+    "id": 186,
+    "name": "ETH_GNT"
+}, {
+    "id": 187,
+    "name": "BTC_GNO"
+}, {
+    "id": 188,
+    "name": "ETH_GNO"
+}, {
+    "id": 189,
+    "name": "BTC_BCH"
+}, {
+    "id": 190,
+    "name": "ETH_BCH"
+}, {
+    "id": 191,
+    "name": "USDT_BCH"
+}, {
+    "id": 192,
+    "name": "BTC_ZRX"
+}, {
+    "id": 193,
+    "name": "ETH_ZRX"
+}]
